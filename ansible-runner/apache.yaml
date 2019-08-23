@@ -1,5 +1,5 @@
 ---
-- hosts: ip-172-31-39-154
+- hosts: *
   sudo: yes
   tasks:
     - name: install apache2
