@@ -9,5 +9,4 @@ steps:
       - echo "${{SSH_PRIVATE_KEY}}" | base64 -d > ~/mykey.pem
       - chmod 0600 ~/mykey.pem
       - ansible all --inventory=${{INSTANCE_IP}}, -m ping --user ${{OS_USER}} --key-file ~/mykey.pem -e 'ansible_python_interpreter="/usr/bin/python3"'
-      
       - ansible-playbook --inventory=${{INSTANCE_IP}}, -m ping --user ${{OS_USER}} --key-file ~/mykey.pem -e 'ansible_python_interpreter="/usr/bin/python3"' apache.yaml
