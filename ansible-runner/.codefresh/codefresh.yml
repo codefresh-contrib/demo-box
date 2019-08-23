@@ -3,6 +3,7 @@ steps:
   DeployWithAnsibleRunner:
     title: Running Ansible Deploy...
     image: 'ansible/ansible-runner:latest'
+    working_directory: ./ansible-runner
     environment:
       - ANSIBLE_HOST_KEY_CHECKING=False
     commands:
